@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shwets Coffee Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./coffee.css" />
+  </head>
+  <body>
+    <div class="loading-screen" id="loading-screen">
+      <div class="loading-card">
+        <div class="bean-loader">
+          <div class="bean-shell">
+            <div class="bean-eye bean-eye-left"><span></span></div>
+            <div class="bean-eye bean-eye-right"><span></span></div>
+            <div class="bean-mouth"></div>
+          </div>
+        </div>
+        <p>Ready to brew?</p>
+        <button id="loading-button" class="primary-button" type="button">Enter shop</button>
+      </div>
+    </div>
+
+    <main class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="/coffee">
+          <span class="brand-mark">SC</span>
+          <strong>Shwets Coffee Shop</strong>
+        </a>
+
+        <nav class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#products">Menu</a>
+          <a href="#info">Info</a>
+          <a href="#contact">Contact</a>
+          <a href="#locations">Location</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+          <span class="welcome-line" id="welcome-line">Welcome</span>
+          <button class="ghost-button" id="signout-button" type="button">Sign out</button>
+        </div>
+      </header>
+
+      <section class="hero-panel" id="home">
+        <div class="hero-visual">
+          <div class="bean-stage">
+            <button class="companion" id="companion" type="button" aria-label="Coffee bean companion">
+              <div class="companion-eye companion-eye-left"><span></span></div>
+              <div class="companion-eye companion-eye-right"><span></span></div>
+              <div class="companion-mouth"></div>
+            </button>
+            <div class="companion-bubble" id="companion-bubble">Best brew, short wait.</div>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Fresh beans. Clean brew.</p>
+          <h1 id="hero-title">The best coffee for your best day.</h1>
+          <p id="hero-copy">Strong coffee. Fast service.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#products">Order now</a>
+            <span class="hero-note" id="announcement-line">Pickup ready fast</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="cup-art">
+            <div class="cup-inner"></div>
+            <div class="cup-handle"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="products-panel" id="products">
+        <div class="panel-head">
+          <h2>Products</h2>
+          <div class="panel-tools">
+            <input id="menu-search" class="search-input" type="search" placeholder="Search" />
+            <button class="ghost-button nav-arrow" id="menu-prev" type="button">←</button>
+            <button class="ghost-button nav-arrow" id="menu-next" type="button">→</button>
+          </div>
+        </div>
+        <div class="menu-row" id="menu-row"></div>
+      </section>
+
+      <section class="order-strip" id="orders">
+        <div class="order-box">
+          <div>
+            <p class="small-label">Cart</p>
+            <h3 id="cart-count">0 items</h3>
+          </div>
+          <div class="cart-items-inline" id="cart-items"></div>
+        </div>
+
+        <form class="order-box order-form" id="order-form">
+          <label>
+            <span>Name</span>
+            <input id="customer-name" name="customerName" type="text" placeholder="Your name" />
+          </label>
+          <label>
+            <span>Table</span>
+            <input id="table-number" name="tableNumber" type="text" placeholder="Table 4" />
+          </label>
+          <label>
+            <span>Pickup</span>
+            <select id="pickup-slot" name="pickupSlot"></select>
+          </label>
+          <button class="primary-button" id="pay-button" type="submit">Pay & order</button>
+          <p class="order-status" id="order-status" aria-live="polite"></p>
+          <div class="payment-meta">
+            <div class="detail-card compact">
+              <strong>Payment goes to</strong>
+              <span id="payment-recipient">Loading...</span>
+            </div>
+            <div class="detail-card compact">
+              <strong>UPI and phone</strong>
+              <span id="payment-recipient-upi">Loading...</span>
+            </div>
+            <div class="detail-card compact">
+              <strong>Order data stored in</strong>
+              <span id="order-storage">Loading...</span>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="products-panel orders-panel" id="order-sheet">
+        <div class="panel-head">
+          <h2>Order sheet</h2>
+          <p class="panel-caption">Your recent stored orders and payment status.</p>
+        </div>
+        <div class="orders-table-wrap">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Table</th>
+                <th>Pickup</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="orders-sheet-body"></tbody>
+          </table>
+          <p class="order-sheet-empty" id="orders-sheet-empty">No orders stored yet.</p>
+        </div>
+      </section>
+
+      <section class="bottom-sections">
+        <article class="info-section" id="info">
+          <div class="section-head">
+            <p class="small-label">Info</p>
+            <h2>Shop details</h2>
+          </div>
+          <p class="section-copy" id="info-copy">Loading...</p>
+          <div class="info-pills" id="info-pills"></div>
+        </article>
+
+        <article class="info-section" id="contact">
+          <div class="section-head">
+            <p class="small-label">Contact</p>
+            <h2>Reach us</h2>
+          </div>
+          <p class="section-copy" id="contact-copy">Loading...</p>
+          <div class="detail-list" id="contact-list"></div>
+        </article>
+
+        <article class="info-section" id="locations">
+          <div class="section-head">
+            <p class="small-label">Location</p>
+            <h2>Visit us</h2>
+          </div>
+          <p class="section-copy" id="locations-copy">Loading...</p>
+          <div class="detail-list" id="locations-list"></div>
+        </article>
+
+        <article class="info-section" id="faq">
+          <div class="section-head">
+            <p class="small-label">FAQ</p>
+            <h2>Quick answers</h2>
+          </div>
+          <p class="section-copy" id="faq-copy">Loading...</p>
+          <div class="faq-list" id="faq-list"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="./coffee.js"></script>
+  </body>
+</html>

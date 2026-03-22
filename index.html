@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shwets Coffee Shop Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-panel">
+        <div class="hero-topline">
+          <p class="eyebrow">Shwets Coffee Shop</p>
+          <span class="hero-chip">Fresh roast</span>
+        </div>
+        <h1>Warm coffee. Fast entry.</h1>
+        <p class="hero-copy">Login, take your table, and start the order.</p>
+
+        <div class="hero-stage">
+          <div class="floating-bean floating-bean-one"></div>
+          <div class="floating-bean floating-bean-two"></div>
+          <div class="steam steam-one"></div>
+          <div class="steam steam-two"></div>
+
+          <div class="bean-character">
+            <div class="bean-eye bean-eye-left"><span></span></div>
+            <div class="bean-eye bean-eye-right"><span></span></div>
+            <div class="bean-mouth"></div>
+          </div>
+
+          <div class="rabbit-scene">
+            <div class="rabbit-cart">
+              <div class="cup-stack cup-one"></div>
+              <div class="cup-stack cup-two"></div>
+              <div class="cart-platform"></div>
+              <div class="rabbit-body">
+                <div class="rabbit-ear rabbit-ear-left"></div>
+                <div class="rabbit-ear rabbit-ear-right"></div>
+                <div class="rabbit-face">
+                  <span class="rabbit-eye rabbit-eye-left"></span>
+                  <span class="rabbit-eye rabbit-eye-right"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="scene-note" id="scene-note">Bean is watching. Rabbit is collecting coffee.</p>
+      </section>
+
+      <section class="auth-card">
+        <div class="card-topbar"></div>
+        <div class="auth-header">
+          <p class="auth-kicker">Shwets Access</p>
+          <h2 id="form-title">Sign in</h2>
+          <p id="form-subtitle">Choose your entry.</p>
+        </div>
+
+        <div class="mode-toggle">
+          <button class="mode-button active" type="button" data-mode="signin">Sign in</button>
+          <button class="mode-button" type="button" data-mode="signup">Sign up</button>
+        </div>
+
+        <div class="social-actions">
+          <button class="social-button google" type="button" data-provider="google">
+            <span>G</span>
+            Continue with Google
+          </button>
+          <button class="social-button facebook" type="button" data-provider="facebook">
+            <span>f</span>
+            Continue with Facebook
+          </button>
+        </div>
+
+        <div class="divider"><span>or use email</span></div>
+
+        <form class="auth-form" id="auth-form" novalidate>
+          <div class="field-grid signup-only">
+            <label class="field">
+              <span>Full name</span>
+              <input type="text" name="name" placeholder="Ava Johnson" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input type="password" name="password" placeholder="Enter your password" minlength="6" required />
+          </label>
+
+          <label class="field signup-only">
+            <span>Confirm password</span>
+            <input type="password" name="confirmPassword" placeholder="Confirm your password" minlength="6" />
+          </label>
+
+          <div class="form-row">
+            <label class="checkbox">
+              <input type="checkbox" name="remember" />
+              <span id="checkbox-label">Remember me</span>
+            </label>
+            <a href="#" id="aux-link">Forgot password?</a>
+          </div>
+
+          <button class="primary-button" type="submit" id="submit-button">Sign in with email</button>
+          <p class="status-message" id="status-message" aria-live="polite"></p>
+          <p class="session-message" id="session-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
